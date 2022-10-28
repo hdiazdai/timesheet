@@ -1,0 +1,7 @@
+{
+  "name": "Timesheep",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
