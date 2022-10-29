@@ -1,0 +1,19 @@
+
+ion-modal#clock-modal {
+    --background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+  /* ion-modal#example-modal::part(backdrop) {
+    /* backdrop-filter: blur(6px); 
+  } */
+  ion-content#time-content {
+    --background: transparent;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 25vh;
+  
+  }
+  ion-datetime{
+      border-radius: 8px ;
+  }
+  
