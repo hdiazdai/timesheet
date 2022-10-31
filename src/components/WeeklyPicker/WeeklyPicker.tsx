@@ -1,5 +1,4 @@
 import {
-  DatetimeChangeEventDetail,
   IonContent,
   IonDatetime,
   IonIcon,
@@ -17,14 +16,13 @@ interface WeeklyPickerProps {
 
 const WeeklyPicker: React.FC<WeeklyPickerProps> = ({ setSelectedDays, selectedDays }) => {
   const onWeekChange = (e: any) => {
-
     setSelectedDays(e.target.value ? e.target.value : [])
   };
 
   return (
     <>
 
-      <IonItem id="date-modal" color="primary">
+      <IonItem id="date-modal" color="primary" className="weakly-content">
         <IonIcon icon={calendar} slot="start" ></IonIcon>
         <IonLabel slot="end">Select days</IonLabel>
         <IonText>12-03.1212</IonText>

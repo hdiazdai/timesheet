@@ -14,5 +14,11 @@ ion-content#date-content {
 
 }
 ion-datetime{
-    border-radius: 8px ;
+    border-radius: 18px ;
+}
+
+.weakly-content{
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 18px;
 }

@@ -1,44 +1,49 @@
-import { IonContent, IonDatetime, IonIcon, IonItem, IonLabel, IonModal, IonText } from '@ionic/react'
-import { time } from 'ionicons/icons'
+import { IonAccordion, IonAccordionGroup, IonButton, IonContent, IonDatetime, IonIcon, IonItem, IonLabel, IonModal, IonText, IonTextarea } from '@ionic/react'
+import { useState } from 'react'
+import DayActivity from '../DayActivity/DayActivity'
+import TimePicker from '../TimePicker/TimePicker'
 import './style.css'
 
 type Props = {
-    day: string
+  day: string
 }
 
 const PickedDay: React.FC<Props> = ({ day }) => {
-    return (
-        <>
+  const [startTime, setStartTime] = useState('08:00')
+  const [finishTime, setFinishTime] = useState('17:00')
+  return (
+    <>
+      <IonItem slot="header" color="light">
+        <IonText slot='start'>Mon</IonText>
+        <IonLabel slot='start'>{day}</IonLabel>
+        <IonText>(8hs)</IonText>
+      </IonItem>
+      <div slot="content">
+      <IonButton expand='block' >ADD  Day activity</IonButton>
+        <IonAccordionGroup expand="inset">
+          <IonAccordion value={'day'}>
             <IonItem slot="header" color="light">
-                <IonLabel>{day}</IonLabel>
-                <IonText>(8hs)</IonText>
+              <IonLabel slot="start">Activity  (1)</IonLabel>
+              <IonText slot="start">4hs</IonText>
             </IonItem>
-            <div className="ion-padding" slot="content">
-
-                <IonItem id={"time-modal" + day} color="primary">
-                    <IonIcon icon={time} slot="start" ></IonIcon>
-                    <IonText>12-03.1212</IonText>
-                    <IonLabel slot="end">Start</IonLabel>
-                </IonItem>
-
-                <IonModal id="clock-modal" trigger={"time-modal" + day} mode="md">
-                    <IonContent id="time-content">
-                        <IonDatetime
-                            // value={selectedDays.length > 0 ? selectedDays : ''}
-                            showDefaultButtons
-                            presentation="time"
-                            size="cover"
-                        // onIonChange={onWeekChange}
-                        ></IonDatetime>
-                    </IonContent>
-                </IonModal>
-
-
+            <div style={{ backgroundColor: 'red', padding: '5px' }} slot="content">
+              <DayActivity
+                day={day}
+                finishTime={finishTime}
+                setFinishTime={setFinishTime}
+                setStartTime={setStartTime}
+                startTime={startTime}
+              />
             </div>
-        </>
+          </IonAccordion>
+        </IonAccordionGroup>
 
 
-    )
+      </div>
+    </>
+
+
+  )
 }
 
 export default PickedDay
