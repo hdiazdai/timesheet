@@ -18,10 +18,10 @@ ion-modal#clock-modal {
   }
   
   ion-textarea.custom-textarea {
-    --background: #373737;
+    --background: #757575;
     --color: #fff;
     --padding-end: 10px;
     --padding-start: 10px;
-    --placeholder-color: #ddd;
+    --placeholder-color: rgb(255, 252, 252);
     --placeholder-opacity: 0.8;
   }

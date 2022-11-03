@@ -1,9 +1,11 @@
 import { IonAccordion, IonAccordionGroup, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
-import PickedDay from '../components/PickedDay/PickedDay';
+
 import { calendar } from 'ionicons/icons'
 
 import WeeklyPicker from '../components/WeeklyPicker/WeeklyPicker';
+import './Tab2.css'
+import PickedDays from '../components/PickedDays/PickedDays';
 
 
 const Tab2: React.FC = () => {
@@ -21,24 +23,25 @@ const Tab2: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Weekly</IonTitle>
+            <IonTitle className='ion-padding' size="large">Weekly Timesheet</IonTitle>
           </IonToolbar>
         </IonHeader>
 
 
-        <IonAccordionGroup expand="inset">
+        <IonAccordionGroup animated expand="compact">
           <IonAccordion value={'day'}>
-            <IonItem slot="header" color="primary">
-              <IonIcon icon={calendar} slot="start" ></IonIcon>
-              <IonLabel slot="start">Week</IonLabel>
-              <IonText slot="start">05/09 - 05/14</IonText>
+            <IonItem slot="header" color="light">
+              <IonIcon icon={calendar} style={{ padding: '20px 0' }} slot="start" ></IonIcon>
+              <IonLabel >1st week</IonLabel>
+              <IonText slot="start"><strong>OCTOBER </strong></IonText>
+              <IonText>42hs</IonText>
             </IonItem>
             <div className="ion-padding" slot="content">
               <WeeklyPicker setSelectedDays={setSelectedDays} selectedDays={selectedDays} />
               <IonAccordionGroup expand="inset">
                 {selectedDays.length > 0 && selectedDays.map((day: string, i) => (
                   <IonAccordion key={i} value={'day' + i}>
-                    <PickedDay day={day} />
+                    <PickedDays day={day} />
                   </IonAccordion>
                 ))}
               </IonAccordionGroup>

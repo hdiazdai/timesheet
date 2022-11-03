@@ -79,7 +79,7 @@ http://ionicframework.com/docs/theming/ */
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
-
+   * -------------------------------------------
    */
 
   body {
@@ -147,11 +147,13 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-light-tint: #383a3e;
   }
 
- 
-  
+  /*
+   * iOS Dark Theme
+   * -------------------------------------------
+   */
 
   .ios body {
-    --ion-background-color: #9a82825c;
+    --ion-background-color: #0403035c;
     --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;

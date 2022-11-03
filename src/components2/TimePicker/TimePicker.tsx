@@ -4,15 +4,13 @@ import React from 'react'
 import './style.css'
 
 type Props = {
-  day: string;
+  id: string;
   label: string;
   selectedTime: string;
   setSelectedTime: React.Dispatch<React.SetStateAction<string>>
 }
 
-const TimePicker: React.FC<Props> = ({ day, label, selectedTime, setSelectedTime }) => {
-  const id = "time-modal" + label + day
-
+const TimePicker: React.FC<Props> = ({ id, label, selectedTime, setSelectedTime }) => {
   const onTimeChange = (event: any) => {
     console.log(event.target.value)
     // console.log(new Date(event.target.value), 'HH:mm')
